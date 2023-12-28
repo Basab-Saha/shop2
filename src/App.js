@@ -1,21 +1,22 @@
-import { FilterBar } from "./Components/FilterBar";
-import { Products } from "./Components/Products";
-import { SearchBar } from "./Components/SearchBar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Header from "./Components2/Header";
+import Home from "./Components2/Home";
+import Cart from "./Components2/Cart";
 
 
 function App() {
   return (
-    <div className="flex-col">
-
-      <SearchBar/>
-      
-      <div className="flex gap-5 app">
-        <FilterBar/>
-        <Products/>
-      </div>
-
-
+    <BrowserRouter>
+    <Header/>
+    <div>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/cart" element={<Cart/>}/>
+        
+      </Routes>
     </div>
+    </BrowserRouter>
+   
   );
 }
 
